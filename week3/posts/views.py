@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
+from .models import codeReview
 
 def hello_world(request):
     if request.method == "GET":
@@ -29,3 +30,10 @@ def codeReviewer(request):
 	]
 },
 json_dumps_params={'ensure_ascii': False})
+    
+def index(request):
+    return render(request, 'index.html')
+
+def codeReviewChallenge(request):
+    codeReview_all = codeReview.objects.all()
+    return render(request, 'index.html', {'codereviews': codeReview_all})
