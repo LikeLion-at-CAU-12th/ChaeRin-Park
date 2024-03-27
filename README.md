@@ -4,14 +4,6 @@
 
 #### 멋쟁이 사자처럼 12기 백엔드 파트 박채린입니다!
 
-#### 3주차 Django 스탠다드 과제
-![과제2code](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/805f8a28-c267-4abd-9595-fb2039a1024f)
-![postman-capture](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/323cccf8-74df-47a8-ae38-7155c9537f26)
-![브라우저캡쳐](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/2121797b-19fb-4538-9db9-cdf17d477199)
-
-#### 3주차 챌린지 과제
-![챌린지과제1](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/a83bd13b-7382-4a2a-a594-cf0174ce7438)
-
 
 #### 저에 대해 간단히 소개하자면...
 소프트웨어학부 23학번 재학 중이고, 현재 2학년입니다!  
