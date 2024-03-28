@@ -4,6 +4,10 @@
 
 #### 멋쟁이 사자처럼 12기 백엔드 파트 박채린입니다!
 
+#### 4주차 스탠다드 과제
+![erd-week4](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/bd1a11d7-cf1d-4d81-a502-97810e395d7f)
+![admin-week4](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/7ad67aaa-614b-42b7-9909-5a2127d46560)
+
 
 #### 저에 대해 간단히 소개하자면...
 소프트웨어학부 23학번 재학 중이고, 현재 2학년입니다!  
