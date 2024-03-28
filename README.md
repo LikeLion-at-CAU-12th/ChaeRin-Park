@@ -5,7 +5,7 @@
 #### 멋쟁이 사자처럼 12기 백엔드 파트 박채린입니다!
 
 #### 4주차 스탠다드 과제
-![erd-week4](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/b07b8dce-2dba-479e-8f89-7fa2bd4fe3ac)
+![erd-week4](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/bd1a11d7-cf1d-4d81-a502-97810e395d7f)
 ![admin-week4](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/7ad67aaa-614b-42b7-9909-5a2127d46560)
 
 
