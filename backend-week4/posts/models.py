@@ -25,6 +25,6 @@ class Post(BaseModel):
 class Comment(BaseModel):
 
     comment_id = models.AutoField(primary_key=True)
-    post_id = models.IntegerField(verbose_name="게시글id")
+    post_id = models.ForeignKey(Post, verbose_name="게시글", on_delete=models.CASCADE)
     writer = models.CharField(verbose_name="작성자", max_length=10)
     content = models.TextField(verbose_name="내용")
