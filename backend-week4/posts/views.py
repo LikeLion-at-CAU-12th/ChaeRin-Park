@@ -20,7 +20,7 @@ def index(request):
 def get_post_detail(request,id):
     post = get_object_or_404(Post, pk=id)
     post_detail_json = {
-        "id" : post.id,
+        "id" : post.post_id,
         "title" : post.title,
         "content" : post.content,
         "writer" : post.writer,
