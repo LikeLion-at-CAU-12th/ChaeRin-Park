@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>저와 제 코드리뷰 짝을 소개합니다!!</h1>
+
+    {% for codeReview in codereviews %}
+        <p>이름: {{ codeReview.name }}</p>
+        <p>나이: {{ codeReview.age }}</p>
+        <p>전공: {{ codeReview.major }}</p>
+        <p>깃허브: {{ codeReview.github }}</p>
+        <br>
+
+    {% endfor %}
+</body>
+</html>
