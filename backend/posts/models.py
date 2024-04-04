@@ -27,7 +27,7 @@ class Post(BaseModel):
 class Comment(BaseModel):
 
     comment_id = models.AutoField(primary_key=True)
-    post_id = models.ForeignKey(Post, verbose_name="게시글", on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, verbose_name="게시글", on_delete=models.CASCADE)
     writer = models.CharField(verbose_name="작성자", max_length=10)
     content = models.TextField(verbose_name="내용")
 
@@ -36,7 +36,7 @@ class Hashtag(BaseModel):
 
     tag_id = models.AutoField(primary_key=True)
     content = models.CharField(verbose_name="해시태그", max_length=20)
-    post_id = models.ManyToManyField(Post, through='HashtagPosts')
+    post = models.ManyToManyField(Post, through='HashtagPosts')
 
 # 해시태그와 게시글의 중간 테이블
 class HashtagPosts(BaseModel):
