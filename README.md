@@ -4,17 +4,14 @@
 
 #### 멋쟁이 사자처럼 12기 백엔드 파트 박채린입니다!
 
-## 4주차 스탠다드 과제
-![erd-week4](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/bd1a11d7-cf1d-4d81-a502-97810e395d7f)
-![admin-week4](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/f78f66ea-a831-48fc-b3cc-1434187763d1)
+## 5주차 스탠다드 과제
+![댓글post](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/66cf7ac1-6a94-40b2-b5e1-9ff5f8ac78ed)
+특정 게시물에 댓글 달기
+![댓글get](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/c7c71a76-1f93-4447-812a-82842c30d9ab)
+특정 게시물의 댓글 보기
+![최근게시물get](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/e052ab0e-073f-4a48-b8d8-3ea4ebfcd53f)
+최근 게시물 보기
 
-## 4주차 챌린지 과제
-![challenge-week4-1](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/dd6170d3-f01c-4f0d-b78a-a17325f05436)
-admin page의 모습입니다.
-![challenge-week4-2](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/a73f1f1c-86d4-4080-9086-bef1f9152004)
-해시태그와 게시글이 다대다 관계임을 고려하여 작성한 코드입니다.
-![challenge-week4-3](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/ec399b11-55d6-4272-8d91-0225913fbacf)
-다대다 관계를 반영하여 매핑테이블을 포함한 erd를 표현하였습니다.
 
 #### 저에 대해 간단히 소개하자면...
 소프트웨어학부 23학번 재학 중이고, 현재 2학년입니다!  
