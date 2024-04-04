@@ -5,4 +5,5 @@ urlpatterns = [
     path('', post_list, name="post_list"),  #post 전체 조회
     path('<int:id>/', post_detail, name="post_detail"), # Post 단일 조회
     path('<int:id>/comment/', comment_list, name="comment_list"), # post의 comment 전체 조회
+    path('recent/', recent_post_list, name="recent_post_list")
 ]

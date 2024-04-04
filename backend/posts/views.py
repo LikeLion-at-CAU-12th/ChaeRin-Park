@@ -4,6 +4,8 @@ from django.shortcuts import get_object_or_404 # 추가
 from django.views.decorators.http import require_http_methods
 from posts.models import *
 import json
+from datetime import datetime, timedelta, date # 날짜
+
 
 # Create your views here.
 
@@ -124,7 +126,7 @@ def post_detail(request, id):
         })
     
 
-
+# 댓글 기능
 @require_http_methods(["POST", "GET"])
 def comment_list(request, id):
     
@@ -170,6 +172,31 @@ def comment_list(request, id):
 
         return JsonResponse({
             'status': 200,
-            'message': '게시글 목록 조회 성공',
+            'message': '댓글 목록 조회 성공',
             'data': comment_json_all
+        })
+    
+# 최근 게시물 기능
+@require_http_methods(["GET"]) 
+def recent_post_list(request):
+    if request.method == "GET":
+
+        post_all = Post.objects.filter(created_at__range=[date(2024, 4, 4), date(2024, 4, 10)]).order_by('-pk')
+
+        post_json_all = []
+        
+        for post in post_all:
+            post_json = {
+                "id": post.post_id,
+                "title" : post.title,
+                "writer": post.writer,
+                "category": post.category,
+                "created_at": post.created_at,
+            }
+            post_json_all.append(post_json)
+
+        return JsonResponse({
+            'status': 200,
+            'message': '게시글 목록 조회 성공',
+            'data': post_json_all
         })
