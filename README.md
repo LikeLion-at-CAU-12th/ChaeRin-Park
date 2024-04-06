@@ -12,6 +12,8 @@
 ![최근게시물get](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/e052ab0e-073f-4a48-b8d8-3ea4ebfcd53f)
 최근 게시물 보기
 
+## 5주차 챌린지 과제
+![이미지 기능](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/5b34acd9-fade-4dfe-b949-b99e9b6c3ef8)
 
 #### 저에 대해 간단히 소개하자면...
 소프트웨어학부 23학번 재학 중이고, 현재 2학년입니다!  
