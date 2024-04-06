@@ -24,15 +24,16 @@ def index(request):
 def post_list(request):
     
     if request.method == "POST":
-        body = json.loads(request.body.decode('utf-8'))
     
 	      # 새로운 데이터를 DB에 생성
         new_post = Post.objects.create(
-            writer = body['writer'],
-            title = body['title'],
-            content = body['content'],
-            category = body['category']
+            writer = request.POST.get('writer'),
+            title = request.POST.get('title'),
+            content = request.POST.get('content'),
+            category = request.POST.get('category'),
+            imgfile = request.FILES.get('imgfile'),
         )
+        
     
 	      # Response에서 보일 데이터 내용을 Json 형태로 만들어줌
         new_post_json = {
@@ -40,13 +41,14 @@ def post_list(request):
             "writer": new_post.writer,
             "title" : new_post.title,
             "content": new_post.content,
-            "category": new_post.category
+            "category": new_post.category,
+            'image': str(new_post.imgfile),
         }
 
         return JsonResponse({
             'status': 200,
             'message': '게시글 생성 성공',
-            'data': new_post_json
+            'data': new_post_json,
         })
     
     if request.method == "GET":
@@ -60,14 +62,14 @@ def post_list(request):
                 "id": post.post_id,
                 "title" : post.title,
                 "writer": post.writer,
-                "category": post.category
+                "category": post.category,
             }
             post_json_all.append(post_json)
 
         return JsonResponse({
             'status': 200,
             'message': '게시글 목록 조회 성공',
-            'data': post_json_all
+            'data': post_json_all,
         })
     
 @require_http_methods(["GET", "PATCH", "DELETE"])

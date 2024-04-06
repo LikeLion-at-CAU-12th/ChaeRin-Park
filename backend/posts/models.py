@@ -22,6 +22,7 @@ class Post(BaseModel):
     content = models.TextField(verbose_name="내용")
     writer = models.CharField(verbose_name="작성자", max_length=10)
     category = models.CharField(choices=CHOICES, max_length=20)
+    imgfile = models.ImageField(null=True, upload_to="", blank=True)
 
 # 댓글 테이블
 class Comment(BaseModel):
