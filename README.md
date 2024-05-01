@@ -2,20 +2,14 @@
 
 ![likeLionGifFile](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/da79b34c-b701-454c-9f7f-7a1f9aae5aa2)
 
-#### 멋쟁이 사자처럼 12기 백엔드 파트 박채린입니다!
+## 멋쟁이 사자처럼 12기 백엔드 파트 박채린입니다!
+## 7주차 스탠다드 과제
+![스탠다드 댓글 post](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/166609121/84709abd-43d7-4848-8f35-749964b40dc0)
+![스탠다드 댓글 get](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/166609121/406bc3bb-345e-4c40-9d69-ef0236cf0aa1)
 
-## 5주차 스탠다드 과제
-![댓글post](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/66cf7ac1-6a94-40b2-b5e1-9ff5f8ac78ed)
-특정 게시물에 댓글 달기
-![댓글get](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/c7c71a76-1f93-4447-812a-82842c30d9ab)
-특정 게시물의 댓글 보기
-![최근게시물get](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/e052ab0e-073f-4a48-b8d8-3ea4ebfcd53f)
-최근 게시물 보기
-
-## 5주차 챌린지 과제
-![이미지 기능](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/5b34acd9-fade-4dfe-b949-b99e9b6c3ef8)
-
-#### 저에 대해 간단히 소개하자면...
+<details>
+<summary>소개</summary>
+<div markdown="1">
 소프트웨어학부 23학번 재학 중이고, 현재 2학년입니다!  
 <span style="color:blue">☆2024년 갓생 살기 프로젝트 진행 중이고요☆</span>  
 우선 멋사!!! 1순위로 두고 있고, 학과 내에서 홍보위원장도 맡고 있습니당  
@@ -37,3 +31,5 @@
 
 멋사에서 많은 추억들 쌓아가고 싶습니다!  
 제 소개글은 여기까지입니당
+</div>
+</details>
