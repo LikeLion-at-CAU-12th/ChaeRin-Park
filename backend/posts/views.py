@@ -202,3 +202,63 @@ def recent_post_list(request):
             'message': '게시글 목록 조회 성공',
             'data': post_json_all
         })
+    
+
+
+
+
+from .serializers import *
+
+# APIView를 사용하기 위해 import
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from django.http import Http404
+
+class PostList(APIView):
+    def post(self, request, format=None):
+        serializer = PostSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    def get(self, request, format=None):
+        posts = Post.objects.all()
+        serializer = PostSerializer(posts, many=True)
+        return Response(serializer.data)
+
+class PostDetail(APIView):
+    def get(self, request, id):
+        post = get_object_or_404(Post, post_id=id)
+        serializer = PostSerializer(post)
+        return Response(serializer.data)
+    
+    def put(self, request, id):
+        post = get_object_or_404(Post, post_id=id)
+        serializer = PostSerializer(post, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data) 
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    def delete(self,request,id):
+        post = get_object_or_404(Post, post_id=id)
+        post.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+    
+# 스탠다드 과제
+class CommentList(APIView):
+    def post(self, request, id, format=None):
+        post_page = get_object_or_404(Post, pk=id)
+        serializer = CommentCreateSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(post = post_page)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    def get(self, request, id, format=None):
+        comments = Comment.objects.filter(post_id = id)
+        serializer = CommentSerializer(comments, many=True)
+        return Response(serializer.data)
+
