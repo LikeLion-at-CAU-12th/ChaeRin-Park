@@ -64,6 +64,7 @@ THIRD_PARTY_APPS = [
     "corsheaders",
     'rest_framework',
     'drf_yasg',
+    'rest_framework_simplejwt',
 ]
 
 
@@ -165,3 +166,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # 이미지
 MEDIA_URL = "/media/"   #맨 앞에 /를 사용하여 절대경로로 지정
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+from datetime import timedelta
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
+REST_USE_JWT = True
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=3),    # 유효기간 3시간
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),    # 유효기간 7일
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': False, # True 하면 refresh 토큰을 못쓰게
+    'TOKEN_USER_CLASS': 'accounts.User', # 어떤 모델을 사용할 건지를 지정, 복붙X
+}
