@@ -11,7 +11,8 @@ class KeyCheck(BasePermission):
 class OnlyWriterManage(KeyCheck):
 	# 인증된 유저에 한해, 목록조회/포스팅등록 허용
     def has_permission(self, request, view):
-        return request.user.is_authenticated
+        if super().has_permission(request, view):
+            return request.user.is_authenticated
 
     # 작성자에 한해, Record에 대한 수정/삭제 허용
     def has_boject_permission(self, request, view, obj):
