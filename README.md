@@ -2,12 +2,15 @@
 
 ![likeLionGifFile](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/da79b34c-b701-454c-9f7f-7a1f9aae5aa2)
 
-## 멋쟁이 사자처럼 12기 백엔드 파트 박채린입니다!
-## 7주차 스탠다드 과제
-![스탠다드 댓글 post](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/166609121/84709abd-43d7-4848-8f35-749964b40dc0)
-![스탠다드 댓글 get](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/166609121/406bc3bb-345e-4c40-9d69-ef0236cf0aa1)
-## 7주차 챌린지 과제
-![챌린지 과제](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/166609121/a403877c-03a9-47f8-be66-66188b3cc4ba)
+
+## week8 standard
+#### header에 입력한 key값이 올바를 때
+![헤더](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/166609121/ad5fbbdd-41b1-4cfc-9b58-b116ee2dc014)
+![post](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/166609121/5032235c-f3ef-46f6-9a4a-5cf8f778fd2b)
+![put](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/166609121/536aa3d6-8d2e-47cc-939a-c3923b702fee)
+#### header에 입력한 key값이 올바르지 않을 때
+![key가 다를 때](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/166609121/eb2afe7a-eb4f-41fe-b68c-bb2b36d06da8)
+
 
 <details>
 <summary>소개</summary>
