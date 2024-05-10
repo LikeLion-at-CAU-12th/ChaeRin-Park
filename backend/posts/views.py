@@ -217,24 +217,28 @@ from django.http import Http404
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
 from rest_framework.pagination import PageNumberPagination
-
-
-# class PostList(APIView):
-#     def post(self, request, format=None):
-#         serializer = PostSerializer(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-#     
-#     def get(self, request, format=None):
-#         posts = Post.objects.all()
-#         serializer = PostSerializer(posts, many=True)
-#         return Response(serializer.data)
-# 
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from .permissions import KeyCheck, OnlyWriterManage
+
+
+class PostList(APIView):
+     permission_classes = [KeyCheck]
+
+     def post(self, request, format=None):
+         serializer = PostSerializer(data=request.data)
+         if serializer.is_valid():
+             serializer.save()
+             return Response(serializer.data, status=status.HTTP_201_CREATED)
+         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+     def get(self, request, format=None):
+         posts = Post.objects.all()
+         serializer = PostSerializer(posts, many=True)
+         return Response(serializer.data)
+ 
 class PostDetail(APIView):
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [OnlyWriterManage]
+    
     def get(self, request, id):
         post = get_object_or_404(Post, post_id=id)
         serializer = PostSerializer(post)
@@ -253,7 +257,7 @@ class PostDetail(APIView):
         post.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
     
-# 스탠다드 과제
+# 7주차 스탠다드 과제
 class CommentList(APIView):
     def post(self, request, id, format=None):
         post_page = get_object_or_404(Post, pk=id)
@@ -268,14 +272,13 @@ class CommentList(APIView):
         serializer = CommentSerializer(comments, many=True)
         return Response(serializer.data)
 
-# 챌린지 과제
+# 7주차 챌린지 과제
 #from rest_framework import mixins
 #from rest_framework import generics
-#from rest_framework.permissions import IsAuthenticated
 
-class PostList(generics.ListCreateAPIView):
-    queryset = Post.objects.all()
-    serializer_class = PostSerializer
+#class PostList(generics.ListCreateAPIView):
+#    queryset = Post.objects.all()
+#    serializer_class = PostSerializer
 
 #class PostDetail(generics.RetrieveUpdateDestroyAPIView):
 #    queryset = Post.objects.all()
