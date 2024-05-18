@@ -6,6 +6,7 @@ from rest_framework import status
 from .serializers import *
 from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth import logout
+from rest_framework.generics import get_object_or_404
 
 # Create your views here.
 class RegisterView(APIView):
@@ -66,3 +67,37 @@ class LogoutView(APIView):
     def post(self, request):
         logout(request)
         return Response({"massage": "로그아웃되었습니다"}, status=status.HTTP_200_OK)
+    
+class UnregisterView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def delete(self, request):
+        serializer = SoftDeleteSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            user = serializer.validated_data['user']
+            user = user.softDelete(request.data.get('restore'))
+            res = Response(
+                {
+                    "message": "탈퇴 성공!",
+                },
+                status=status.HTTP_200_OK,
+            )
+            return res
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+class RestoreView(APIView):
+    def post(self, request):
+        serializer = SoftDeleteSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            user = serializer.validated_data['user']
+            user = user.restore(request.data.get('restore'))
+            res = Response(
+                {
+                    "message": "복구 성공!",
+                },
+                status=status.HTTP_200_OK,
+            )
+            return res
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
