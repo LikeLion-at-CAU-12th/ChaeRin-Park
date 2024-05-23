@@ -9,7 +9,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['password', 'username', 'email']
+        fields = "__all__"
 
     def save(self, request):
 
@@ -65,3 +65,30 @@ class AuthSerializer(serializers.ModelSerializer):
         return data
     
     # is None과 ==None의 차이
+
+class SoftDeleteSerializer(serializers.ModelSerializer):
+    username = serializers.CharField(required=True)
+    password = serializers.CharField(required=True)
+    restore = serializers.CharField(required=True)
+
+    class Meta:
+        model = User
+        fields = ['username', 'password', 'restore']
+
+    def validate(self, data):
+        username = data.get('username', None)
+        password = data.get('password', None)
+
+        user = User.get_user_or_none_by_username(username=username)
+
+        if user is None:
+            raise serializers.ValidationError('user account not exist')
+        else:
+            if not user.check_password(raw_password=password):
+                raise serializers.ValidationError('wrong password')
+            
+        data = {
+            'user': user,
+        }
+
+        return data
