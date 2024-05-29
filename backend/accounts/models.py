@@ -17,4 +17,3 @@ class User(AbstractUser):
             return User.objects.get(email=email)
         except Exception:
             return None
-        

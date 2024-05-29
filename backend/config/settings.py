@@ -53,6 +53,7 @@ DJANGO_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "django.contrib.sites",
 ]
 
 PROJECT_APPS = [
@@ -65,17 +66,25 @@ THIRD_PARTY_APPS = [
     'rest_framework',
     'drf_yasg',
     'rest_framework_simplejwt',
+
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google", 
     # "allauth.socialaccount.providers.{제공_업체}" 찾아서 사용 가능
+    
+    "dj_rest_auth",
+    "dj_rest_auth.registration",
+    "rest_framework.authtoken",
 ]
 
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
 
 AUTH_USER_MODEL = 'accounts.User'
+
+# 사용할 사이트 개수
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -86,6 +95,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    # allauth를 쓰기 위해 middleware 추가
     "allauth.account.middleware.AccountMiddleware",  
 ]
 
