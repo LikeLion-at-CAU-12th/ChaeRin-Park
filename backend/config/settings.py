@@ -65,6 +65,11 @@ THIRD_PARTY_APPS = [
     'rest_framework',
     'drf_yasg',
     'rest_framework_simplejwt',
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google", 
+    # "allauth.socialaccount.providers.{제공_업체}" 찾아서 사용 가능
 ]
 
 
@@ -81,9 +86,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    "allauth.account.middleware.AccountMiddleware",  
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+ACCOUNT_EMAIL_REQUIRED = True            # email 필드 사용 o
+ACCOUNT_USERNAME_REQUIRED = True         # username 필드 사용 o
+ACCOUNT_AUTHENTICATION_METHOD = "email"
 
 CORS_ALLOWED_ORIGINS = [ 
     "http://localhost:3000",

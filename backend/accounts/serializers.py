@@ -65,3 +65,32 @@ class AuthSerializer(serializers.ModelSerializer):
         return data
     
     # is None과 ==None의 차이
+
+class OAuthSerializer(serializers.ModelSerializer):
+    email = serializers.CharField(required=True)
+
+    class Meta:
+        model = User
+        fields = ["email"]
+
+    # 유저의 이메일이 있는지 없는지 확인
+    def validate(self, data):
+        email = data.get("email", None)
+        
+        user = User.get_user_or_none_by_email(email=email)
+        
+        if user is None:
+            raise serializers.ValidationError("user account not exists")
+
+        token = RefreshToken.for_user(user)
+        refresh_token = str(token)
+        access_token = str(token.access_token)
+
+        # 토큰 발급해서 넘겨주기
+        data = {
+            "user": user,
+            "refresh_token": refresh_token,
+            "access_token": access_token,
+        }
+
+        return data
