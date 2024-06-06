@@ -23,6 +23,7 @@ class Post(BaseModel):
     writer = models.CharField(verbose_name="작성자", max_length=10)
     category = models.CharField(choices=CHOICES, max_length=20)
     imgfile = models.ImageField(null=True, upload_to="", blank=True)
+    thumnail = models.ImageField(null = True, blank=True, verbose_name="썸네일")
 
 # 댓글 테이블
 class Comment(BaseModel):
