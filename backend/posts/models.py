@@ -24,6 +24,7 @@ class Post(BaseModel):
     writer = models.CharField(verbose_name="작성자", max_length=10)
     category = models.CharField(choices=CHOICES, max_length=20)
     thumnail = models.ImageField(null = True, blank=True, verbose_name="썸네일", validators=[validate_image])
+    thumnail_url = models.URLField(max_length=200, default='')
 
 # 댓글 테이블
 class Comment(BaseModel):
