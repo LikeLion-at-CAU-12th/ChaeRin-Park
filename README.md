@@ -3,10 +3,11 @@
 ![likeLionGifFile](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/162853583/da79b34c-b701-454c-9f7f-7a1f9aae5aa2)
 
 
-## week9 standard
-#### header에 입력한 key값이 올바를 때
-아래와 같이 admin에서 설정을 해주어야 함
-![스크린샷 2024-05-30 031010](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/166609121/6187a671-f631-40c1-b1a9-05ede075354a)
+## week10 standard
+#### png 파일을 첨부하였을 때
+![스크린샷 2024-06-08 025144](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/166609121/fa65ccbc-d16b-4d83-b02d-8a3aeb1b37d4)
+#### DB에 이미지 URL을 저장
+![스크린샷 2024-06-08 025035](https://github.com/LikeLion-at-CAU-12th/ChaeRin-Park/assets/166609121/312ae1e5-1307-40cc-a6ee-2e90ea5ade24)
 
 
 <details>
